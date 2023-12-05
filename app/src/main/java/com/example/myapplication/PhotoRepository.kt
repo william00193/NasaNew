@@ -14,7 +14,7 @@ class PhotoRepository(private val flickrApi: FlickrAPI) {
 
 
 //This is my paging source library that was the help of Android Studio Bot and the Android developers page
-//This is allowing me to define my prevKey and nextKey
+//This is allowing me to define my prevKey and nextKey as well as LoadResult.Page
     class PhotoPagingSource(private val flickrApi: FlickrAPI) : PagingSource<Int, GalleryItem>() {
 
         override suspend fun load(params: LoadParams<Int>): LoadResult<Int, GalleryItem> {
