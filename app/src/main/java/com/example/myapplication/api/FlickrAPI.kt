@@ -1,7 +1,6 @@
 package com.example.myapplication.api
 
-import androidx.paging.PagedList
-import com.example.myapplication.PhotoRepository
+
 import retrofit2.http.GET
 
 private const val API_KEY = "38966820aba3820d74f6b3121335fe3d"
@@ -12,7 +11,7 @@ interface FlickrAPI {
         "services/rest/?method=flickr.interestingness.getList" +
                 "&api_key=$API_KEY" +
                 "&format=json" +
-                "&page=5"+
+                "&page=4"+
                 "&per_page=100"+
                 "&nojsoncallback=1" +
                 "&extras=url_s"
@@ -21,6 +20,8 @@ interface FlickrAPI {
 //    @GET("api/?key=40895557-d49a07cca955c5315c2bae711" +
 //            "&q=panda" +
 //            "&format=json" +
+//            "&page=4"+
+//            "&per_page=100"+
 //            "&nojsoncallback=1"
 //    )
 

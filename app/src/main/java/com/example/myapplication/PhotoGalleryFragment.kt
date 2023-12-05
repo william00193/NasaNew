@@ -18,14 +18,24 @@ import com.example.myapplication.databinding.ListItemGalleryBinding
 import kotlinx.coroutines.launch
 
 
-private const val TAG = "PhotoGalleryFragment"
+//Tag that was used in the beginning of the project
+//private const val TAG = "PhotoGalleryFragment"
 
+
+
+
+
+//My PhotoGalleryFragment class that extends Fragment
+//This is the main class that is going to be used to display the photos
+//Most of this has stayed the same from the exercise #1
 class PhotoGalleryFragment : Fragment() {
+
 
     private var _binding: FragmentPhotoGalleryBinding? = null
     private val binding get() = _binding!!
 
     private val photoGalleryViewModel: PhotoGalleryViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +47,11 @@ class PhotoGalleryFragment : Fragment() {
         return binding.root
     }
 
+
+
+
+//The only thing that has changed here was the addition of submitData and pagingData
+//This is what is going to be used to get and display the photos with the paging 3 library
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val photoListAdapter = PhotoListAdapter()
@@ -47,9 +62,15 @@ class PhotoGalleryFragment : Fragment() {
                     photoListAdapter.submitData(pagingData)
                 }
             }
+        
         }
     }
 
+
+
+
+
+//My new PhotoList Adapter that was a suggestion from Android Studio Bot
     class PhotoListAdapter : PagingDataAdapter<GalleryItem, PhotoViewHolder>(PHOTO_COMPARATOR) {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
             val binding =
@@ -66,6 +87,9 @@ class PhotoGalleryFragment : Fragment() {
         }
     }
 
+
+
+//My new PHOTO_COMPARATOR and areContentsTheSame that were suggestions from Android Studio Bot
     object PHOTO_COMPARATOR : DiffUtil.ItemCallback<GalleryItem>() {
         override fun areItemsTheSame(oldItem: GalleryItem, newItem: GalleryItem): Boolean {
             return oldItem.id == newItem.id
@@ -73,11 +97,14 @@ class PhotoGalleryFragment : Fragment() {
         }
 
         override fun areContentsTheSame(oldItem: GalleryItem, newItem: GalleryItem): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
 
     }
 
+
+
+//The onDestroyView that hasn't been changed
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

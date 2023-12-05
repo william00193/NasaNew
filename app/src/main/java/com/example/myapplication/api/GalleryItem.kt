@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonClass
 
 
 
-//Flickr GalleryItem
+//Data class that is defining the attributes in my PhotoResponse
 @JsonClass(generateAdapter = true)
 data class GalleryItem(
     val title: String,
@@ -13,14 +13,8 @@ data class GalleryItem(
     @Json(name = "url_s") val url: String,
 )
 
-//A resource is failing to call close when application is launched
 
-
-
-//Pixabay GalleryItem, rewrite this code section to bring back necessary pixabay fields
-//Call this data class GalleryItem
-
-
+//Pixabay GalleryItem that I was using before I switched to Flickr
 //@JsonClass(generateAdapter = true)
 //data class GalleryItem(
 //    val id: Int,
@@ -30,6 +24,36 @@ data class GalleryItem(
 //    val previewURL: String,
 //    @Json(name = "webformatURL") val url : String,
 //)
+
+
+//Pixabay GalleryItem that I was using before I switched to Flickr
+//@JsonClass(generateAdapter = true)
+//data class GalleryItem(
+//    val id: Int,
+// val pageURL: String,
+// val type: String,
+// val tags: String,
+// val previewURL: String,
+// val previewWidth: Int,
+// val previewHeight: Int,
+// @Json(name = "webformatURL") val url : String,
+// val webformatWidth: Int,
+// val webformatHeight: Int,
+// val largeImageURL: String,
+// val imageWidth: Int,
+// val imageHeight: Int,
+// val imageSize: Int,
+// val views: Int,
+// val downloads: Int,
+// val collections: Int,
+// val likes: Int,
+// val comments: Int,
+// val user_id: Int,
+// val user: String,
+// val userImageURL: String,
+//)
+
+
 
 
 //Everything that pixabay brings back
