@@ -24,9 +24,9 @@ class PhotoGalleryViewModel: ViewModel() {
 
 
 //Base Url for the API
-        .baseUrl("https://api.flickr.com/")
+        .baseUrl("https://api.nasa.gov/planetary/")
 
-//        .baseUrl("  https://pixabay.com/")
+
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
         .create(FlickrAPI::class.java)
