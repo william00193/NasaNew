@@ -28,18 +28,12 @@ class PhotoViewHolder(
 //What onCLick is going to save and send to the next activity
             val intent = Intent(binding.root.context, SecondActivity::class.java)
 
-            intent.putExtra("url_s", galleryItem.url)
+            intent.putExtra("hdurl", galleryItem.url)
 
             intent.putExtra("title", galleryItem.title)
 
             binding.root.context.startActivity(intent)
 
-//Toast for Flickr
-//            Toast.makeText(
-//                binding.root.context,
-//                "${galleryItem.title}",
-//                Toast.LENGTH_SHORT
-//            ).show()
 
         }
 

@@ -16,7 +16,7 @@ class SecondActivity : AppCompatActivity() {
 
 //What my second activity is getting and displaying
 //Step 1: Finding my previously saved data
-        val image_url = intent.getStringExtra("url_s")
+        val image_url = intent.getStringExtra("hdurl")
 
 //Step 2: Finding my imageView and setting the image_url to it
         val imageView = findViewById<ImageView>(R.id.imageViewNew)
