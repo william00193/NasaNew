@@ -4,6 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 
+
 //Data class that is defining the 'GalleryItem'
 
 @JsonClass(generateAdapter = true)
